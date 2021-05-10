@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <!--
+        Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+         2021-05-06 05:54:49 DEBUG SQL:144 -
+         -->
+<!--        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/hellohibernate</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">password</property>
+
+        <!-- SQL dialect -->
+        <!--Fix for java.sql.SQLSyntaxErrorException: Table 'hellohibernate.user' doesn't exist
+         to change mysql dialect from MySQLDialect to MySQL5Dialect-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.generate_statistics">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Echo all executed SQL to stdout -->
+        <!-- Not needed as configured in log4j.properties file now-->
+<!--        <property name="show_sql">true</property>-->
+         
+        <!-- Use XML-based mapping metadata -->	
+<!--         <mapping resource="com/amit/jpa/hibernate/domain/Message.hbm.xml"/>-->
+        
+        <!-- Use Annotation-based mapping metadata -->
+<!--        <mapping class="com.amit.hibernate.helloworld.entity.Message"/>-->
+<!--        <mapping class="com.amit.hibernate.mapping.demo.entity.User" />-->
+            <mapping class="com.amit.hibernate.cascade.demo.entity.Guide" />
+            <mapping class="com.amit.hibernate.cascade.demo.entity.Student" />
+
+    </session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
