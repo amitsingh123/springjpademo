@@ -33,9 +33,12 @@
         <!-- Use Annotation-based mapping metadata -->
 <!--        <mapping class="com.amit.hibernate.helloworld.entity.Message"/>-->
 <!--        <mapping class="com.amit.hibernate.mapping.demo.entity.User" />-->
-            <mapping class="com.amit.hibernate.cascade.demo.entity.Guide" />
-            <mapping class="com.amit.hibernate.cascade.demo.entity.Student" />
-
+        <!-- ManyToOne demo -->
+<!--            <mapping class="com.amit.hibernate.cascade.demo.entity.Guide" />-->
+<!--            <mapping class="com.amit.hibernate.cascade.demo.entity.Student" />-->
+        <!-- OneToOne demo -->
+        <mapping class="com.amit.hibernate.cascade.demo.entity.Customer"/>
+        <mapping class="com.amit.hibernate.cascade.demo.entity.Passport" />
     </session-factory>
 </hibernate-configuration>
 
