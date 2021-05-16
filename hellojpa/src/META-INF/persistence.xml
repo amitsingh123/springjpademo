@@ -15,7 +15,7 @@
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			
 			<!-- Create/update tables automatically using mapping metadata -->
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			
 			<!-- Pretty print the SQL in the log file and console -->
 			<property name="hibernate.format_sql" value="false" />
